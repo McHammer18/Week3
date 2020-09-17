@@ -124,8 +124,10 @@ public class StartProgram {
 		}
 
 		private static void viewTheList() {
-			// TODO Auto-generated method stub
-			
+			List<ListItem> allItems = lih.showAllItems();
+			for(ListItem singleItem : allItems) {
+				System.out.println(singleItem.returnItemDetails());
+			}
 
 		}
 
