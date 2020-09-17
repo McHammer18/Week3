@@ -15,7 +15,6 @@ public class StartProgram {
 		
 		
 		private static void addAnItem() {
-			// TODO Auto-generated method stub
 			System.out.print("Enter a store: ");
 			String store = in.nextLine();
 			System.out.print("Enter an item: ");
@@ -25,30 +24,31 @@ public class StartProgram {
 		}
 
 		private static void deleteAnItem() {
-			// TODO Auto-generated method stub
 			System.out.print("Enter the store to delete: ");
 			String store = in.nextLine();
 			System.out.print("Enter the item to delete: ");
 			String item = in.nextLine();
+			ListItem toDelete = new ListItem(store,item);
+			lih.deleteItem(toDelete);
 
 		}
 
 		private static void editAnItem() {
-			// TODO Auto-generated method stub
 			System.out.println("How would you like to search? ");
 			System.out.println("1 : Search by Store");
 			System.out.println("2 : Search by Item");
 			int searchBy = in.nextInt();
 			in.nextLine();
-			/*List<ListItem> foundItems;
+			List<ListItem> foundItems;
 			if (searchBy == 1) {
 				System.out.print("Enter the store name: ");
 				String storeName = in.nextLine();
+				foundItems = lih.searchForItemByStore(storeName);
 				
 			} else {
 				System.out.print("Enter the item: ");
 				String itemName = in.nextLine();
-				
+				foundItems = lih.searchForItemByStore(itemName);
 
 			}
 
@@ -82,7 +82,6 @@ public class StartProgram {
 			} else {
 				System.out.println("---- No results found");
 			}
-*/
 		}
 
 		public static void main(String[] args) {
@@ -114,7 +113,7 @@ public class StartProgram {
 				} else if (selection == 4) {
 					viewTheList();
 				} else {
-					//lih.cleanUp();
+					lih.cleanUp();
 					System.out.println("   Goodbye!   ");
 					goAgain = false;
 				}
