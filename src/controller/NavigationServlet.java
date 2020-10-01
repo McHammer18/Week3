@@ -41,6 +41,7 @@ public class NavigationServlet extends HttpServlet {
 		// after all changes, we should redirect to the viewAllItemsservlet
 		// The only time we don't is if they select to add a new item or edit
 		String path = "/viewAllItemsServlet";
+		
 		if(act.equals("delete")) {
 			
 			//exception handling
@@ -66,8 +67,7 @@ public class NavigationServlet extends HttpServlet {
 		else if(act.equals("add")) {
 		path = "/index.html";
 		}
-		getServletContext().getRequestDispatcher(path).forward(request,
-		response);
+		getServletContext().getRequestDispatcher(path).forward(request,response);
 	}
 
 }
